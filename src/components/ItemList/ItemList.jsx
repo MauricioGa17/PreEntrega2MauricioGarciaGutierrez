@@ -16,26 +16,24 @@ const ItemList = () => {
   const [ items, setItems ] = useState([]);
   const [ loading, setLoading ] = useState(false)
 
-    //Funcion para obtener productos
-    const onObtenerProductos = () => {
-        return new Promise(( resolve, reject ) => {
-          setTimeout(() => {
-            resolve(stock)
-            reject("Rechazado")
-          }, 1000);
-        })
-    }
-    
-    useEffect(() => {
-        setLoading(true)
-        onObtenerProductos()
-          .then((res) => categoryId ? setItems(res.filter(item => item.categoria === categoryId)) : setItems(res))
-          .catch((error) => console.log(error))
-          .finally(() => setLoading(false))
-    }, [categoryId])
+  //Funcion para obtener productos
+  const onObtenerProductos = () => {
+      return new Promise(( resolve, reject ) => {
+        setTimeout(() => {
+          resolve(stock)
+          reject("Rechazado")
+        }, 1000);
+      })
+  }
+  
+  useEffect(() => {
+      setLoading(true)
+      onObtenerProductos()
+        .then((res) => categoryId ? setItems(res.filter(item => item.categoria == categoryId)) : setItems(res))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false))
+  }, [categoryId])
       
-    
-
     return (
         <Row>
             {loading 

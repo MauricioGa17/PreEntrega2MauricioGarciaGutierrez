@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 //iMPORTAR lISTA 
 import stock from '../../data/stock'
-import Item from '../Item/Item';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
 
@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
             <Row>
                 {loading 
                     ? <h4>Cargando</h4>
-                    : <Item item={item}/>
+                    : <ItemDetail item={item}/>
                 }
             </Row>
         </div>

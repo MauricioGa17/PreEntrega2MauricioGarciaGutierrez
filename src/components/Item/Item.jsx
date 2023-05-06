@@ -13,7 +13,7 @@ const Item = ({ item }) => {
         <Card className="mb-4">
             <Card.Img className="rounded mx-auto d-block img-thumbnail card-image p-1" src={item.imagen} />
             <Card.Body className='p-0'>
-                <Link to={`item/${item.id}`}><Card.Title className='bg-transparent px-3 py-2 text-start my-2 sf-5'>{item.producto}</Card.Title></Link>
+                <Link to={`/item/${item.id}`}><Card.Title className='bg-transparent px-3 py-2 text-start my-2 sf-5'>{item.producto}</Card.Title></Link>
                 <Card.Text className='px-3 d-flex flex-row justify-content-start'>
                     <label className='text-start h4'><strong>$ </strong>{item.costo}</label>
                     <label className='ms-3 mt-2 text-capitalize text-secondary'>Categoria: {item.categoria}</label>
